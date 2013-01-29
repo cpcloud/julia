@@ -657,6 +657,8 @@ static void init_rl(void)
         rl_bind_keyseq_in_map("\e[3~", delete_callback,     keymaps[i]);
         rl_bind_keyseq_in_map("\e[5~", rl_named_function("beginning-of-history"), keymaps[i]);
         rl_bind_keyseq_in_map("\e[6~", rl_named_function("end-of-history"), keymaps[i]);
+        rl_bind_keyseq_in_map("\\C-n", rl_named_function("history-search-forward"), keymaps[i]);
+        rl_bind_keyseq_in_map("\\C-p", rl_named_function("history-search-backward"), keymaps[i]);
         rl_bind_keyseq_in_map("\e[A",  up_callback,         keymaps[i]);
         rl_bind_keyseq_in_map("\e[B",  down_callback,       keymaps[i]);
         rl_bind_keyseq_in_map("\e[D",  left_callback,       keymaps[i]);
